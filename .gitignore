@@ -1,0 +1,6 @@
+gka
+__pycache__/
+.vscode
+.DS_Store
+DATA/
+env/
