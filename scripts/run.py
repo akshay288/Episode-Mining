@@ -18,7 +18,9 @@ from episode_mining.run_tasks import run_disaggregator
 ds = REDDDatasource(1, '/Users/akshay/Documents/Projects/episode_mining/DATA/REDD-Results/Results_CP_house_1.mat')
 # ds = EcolabDatasource(2, '/Users/akshay/Documents/Projects/episode_mining/DATA/ecolabs_results/Results_CP_house_2.mat')
 
-os.makedirs('test')
+output_dir = 'test'
+
+os.makedirs(output_dir)
 
 metrics = run_disaggregator(
     IterativeDisaggregator,
@@ -31,7 +33,7 @@ metrics = run_disaggregator(
     'max_cluster_diff': 0.000001
     },
     [ds],# , ds_b]
-    output_dir='test'
+    output_dir=output_dir
 )
 
 print(metrics)
